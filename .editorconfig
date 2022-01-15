@@ -1,0 +1,40 @@
+# Editor configuration, see http://editorconfig.org
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+max_line_length = 160
+trim_trailing_whitespace = true
+
+[*.md]
+max_line_length = 0
+
+[*.{yml,json}]
+indent_size = 2
+
+[*.{xml,props,targets,config,csproj}]
+indent_size = 2
+
+[*.sh]
+end_of_line = lf
+
+[*.cs]
+dotnet_sort_system_directives_first = true
+
+# ROSLYN
+# Mark members as static - https://docs.microsoft.com/en-us/dotnet/fundamentals/code-analysis/quality-rules/ca1822
+dotnet_diagnostic.CA1822.severity = Suggestion
+
+# SONAR
+# Sections of code should not be commented out - https://sonarcloud.io/organizations/default/rules?open=csharpsquid%3AS125&rule_key=csharpsquid%3AS125
+dotnet_diagnostic.S125.severity = Suggestion
+
+# Utility classes should not have public constructors - https://sonarcloud.io/organizations/default/rules?languages=cs&q=S1118
+dotnet_diagnostic.S1118.severity = Suggestion
+
+# Methods should not return constants - https://sonarcloud.io/organizations/default/rules?open=csharpsquid%3AS3400&rule_key=csharpsquid%3AS3400
+dotnet_diagnostic.S3400.severity = Suggestion
